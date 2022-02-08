@@ -32,10 +32,13 @@
                                     </dd>
                                 </dl>
                             </div>
-                            <div class="card-body">
-                                <a v-bind:href="item.href" class="btn btn-primary" role="button">Ver</a>
-                                <a v-bind:href="item.href" class="btn btn-secondary" role="button">Editar</a>
+                            <div class="item-data">
+                                <div class="card-body">
+                                    <a v-bind:href="item.href" class="btn btn-primary" role="button">Ver</a>
+                                    <a v-bind:href="editForm" class="btn btn-secondary" role="button">Editar</a>
+                                </div>
                             </div>
+                            
                            
                         </div>            
                     </div>
@@ -68,7 +71,7 @@
 
         <!-- Plantilla para el componente item-data -->
         <script type="text/x-template" id="itemData">
-
+            
             <!--
                  TODO: Componente item-data
             -->
