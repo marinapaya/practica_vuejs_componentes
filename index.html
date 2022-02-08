@@ -7,7 +7,7 @@
         <meta name="author" content="">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- TODO: Cargar CSS Bootstrap (no es necesario el JS) -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
 
     <body>
@@ -16,6 +16,34 @@
 
         <!-- https://vuejs.org/v2/guide/index.html -->
         <div id="app">
+                <div class="jumbotron">
+                        <h1 class="display-4" id="title">{{ col.collection.title }}</h1> 
+                    </div>
+                    <div class="container">
+                    <div class="card-group">
+                        <div class="card" v-for="item in col.collection.items">
+                            <div class="card-body" v-for="pelicula in item.data">
+                                <dl>
+                                    <dt class="card-title"> 
+                                        {{ pelicula.prompt }}
+                                    </dt>
+                                    <dd class="card-text">
+                                        {{pelicula.value}}
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="card-body">
+                                <a v-bind:href="item.href" class="btn btn-primary" role="button">Ver</a>
+                                <a v-bind:href="item.href" class="btn btn-secondary" role="button">Editar</a>
+                            </div>
+                           
+                        </div>            
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+                <script src="./js/script.js"></script>
+            </div>
+
             <!--
                  TODO: Aplicación VueJS. Ver archivo ./js/script.js
                - Mostrar el título de la colección dentro de un componente Jumbotron de Bootstrap https://getbootstrap.com/docs/4.0/components/jumbotron/. En su interior habrá un <h1> con id "title" que mostrará el título de la colección
@@ -23,8 +51,7 @@
                  - Crear un componente item-data
             -->
 
-        </div>
-
+        
 
 
         <!-- Plantilla para el componente edit-form -->
@@ -33,6 +60,7 @@
             <!--
                  TODO: Componente edit-form
             -->
+            
 
         </script>
 
