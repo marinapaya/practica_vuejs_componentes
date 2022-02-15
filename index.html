@@ -45,7 +45,7 @@
                 <input v-if="d.prompt != 'Description'" v-model="d.value" type="text">
                 <textarea v-else v-model="d.value" type="text"></textarea>
             </dl>
-            
+            <button class="btn btn-primary"  v-on:click="formClose">Cerrar</button>
         </script>
 
 
