@@ -39,11 +39,13 @@
         <!-- Plantilla para el componente edit-form -->
         <script type="text/x-template" id="editForm">
 
-            <!--
-                 TODO: Componente edit-form
-            -->
+            <!-- TODO: Componente edit-form -->
+            <dl v-for="d in item.data">
+                <dd>{{d.prompt}}</dd>
+                <input v-if="d.prompt != 'Description'" v-model="d.value" type="text">
+                <textarea v-else v-model="d.value" type="text"></textarea>
+            </dl>
             
-
         </script>
 
 
@@ -51,9 +53,8 @@
         <!-- Plantilla para el componente item-data -->
         <script type="text/x-template" id="itemData">
             
-            <!--
-                 TODO: Componente item-data
-            -->
+            <!-- TODO: Componente item-data -->
+            
 
         </script>
 
